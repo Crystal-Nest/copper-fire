@@ -1,0 +1,9 @@
+{
+  "enchantment.minecraft.copper_fire_aspect": "Aspetto di fuoco cuprico",
+  "enchantment.minecraft.copper_flame": "Fiamma cuprica",
+  "enchantment.minecraft.copper_fire_aspect.desc": "Provoca un danno da fuoco cuprico aggiuntivo quando l'arma viene usata per attaccare una creatura.",
+  "enchantment.minecraft.copper_flame.desc": "Le frecce scagliate dall'arco provocano un danno da fuoco cuprico aggiuntivo.",
+  "datapack.copper_fire.enchantments": "Incantesimi di Copper Fire",
+  "datapack.copper_fire.enchantments.description": "Ardi i tuoi nemici con Aspetto di fuoco cuprico e Fiamma cuprica!",
+  "block.minecraft.copper_campfire": "Fuoco da campo in rame"
+}

@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "min_format": ${pack_format},
+    "max_format": ${pack_format},
+    "description": {
+      "translate": "datapack.copper_fire.enchantments.description",
+      "fallback": "Burn your enemies with Copper Fire Aspect and Copper Flame!"
+    }
+  }
+}

@@ -30,6 +30,9 @@
     "minecraft": "~${minecraft_version}",
     "java": ">=${java_version}",
     "cobweb": "^${cobweb_version}",
-    "forgeconfigapiport": "~${fcap_version}"
+    "prometheus": "^${prometheus_version}"
+  },
+  "suggests": {
+    "soul_fire_d": "^6.0.3"
   }
 }

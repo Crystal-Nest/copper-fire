@@ -1,0 +1,9 @@
+{
+  "enchantment.minecraft.copper_fire_aspect": "Cupric Fire Aspect",
+  "enchantment.minecraft.copper_flame": "Cupric Flame",
+  "enchantment.minecraft.copper_fire_aspect.desc": "Causes additional cupric fire damage when used to attack a mob.",
+  "enchantment.minecraft.copper_flame.desc": "Arrows fired from the bow will deal additional cupric fire damage.",
+  "datapack.copper_fire.enchantments": "Copper Fire enchantments",
+  "datapack.copper_fire.enchantments.description": "Burn your enemies with Cupric Fire Aspect and Cupric Flame!",
+  "block.minecraft.copper_campfire": "Copper Campfire"
+}
