@@ -12,41 +12,54 @@
 
 ---
 
-## **Description**
+## 📝 **Description**
 
-Multiloader skeleton for Minecraft mods!  
-Built on [Jared's MultiLoaderTemplate](https://github.com/jaredlll08/MultiLoader-Template), with the addition of:
+Mojang added in copper torches and lanterns `1.21.10`... but where is **Copper Fire**? Well, here it is!
 
-- Tasks to publish on Maven, GitHub, Modrinth, and CurseForge.
-- [Cobweb](https://modrinth.com/mod/cobweb) API dependency.
-- A little bit more Javadoc.
-- Code style changes.
+This mod ensures that Copper Fire exists and has distinct behaviors, including special damage effects, custom enchantments, and more.
 
-***Note: the intended use of this template is to create a repository from it, and then update each branch with the content built by our [official generator](https://crystalnest.it/#/generator).***
+> ⚠️ **Important**: Copper Fire must be installed on **both client and server**, as it introduces substantial gameplay changes, not just visuals.
 
-## **Setup completion**
+## ✨ **Features**
 
-To complete the setup:
+- 🟢 **Copper Fire overlay**  
+  ![Overlay](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/overlay.gif)  
+  *Prefer a slimmer version? Check out [Slim Fire](https://modrinth.com/resourcepack/slim-fire)!*
 
-- Change the [Support us](#support-us) section and the banner link.
-- Add your project CurseForge ID in the `gradle.properties`.
-- Check out the configuration example.
-- Update the changelog with proper release notes.
+- 🔥 **Custom Copper Fire damage**  
+  Entities catching Copper Fire green visibly blue and take 1.5 damage per second.  
+  ![Sheep](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/sheep.gif)
 
-## Removing Platforms and Loaders
+- 🏕️ **Copper Campfire**  
+  wejfdnwekjdw  
+  ![Campfire](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/campfire.gif)
 
-While this template includes support for Fabric and NeoForge, you can easily remove support for the ones you don't need.  
-This can be done by deleting the subproject folder and then removing it from the associated `include` in the `settings.gradle` file, along with deleting the related gradle properties.
+- 🧱 **Copper Golems burn with Copper Fire**  
+  jnfdjenkdfjn  
+  ![Golems](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/golems.gif)
 
-The same thing applies for the different publishing platforms, Maven, GitHub, Modrinth, and CurseForge.  
-To remove support for the ones you don't need just remove the section and properties regarding them.
+- 🏮 **Lanterns light changes with oxidation**  
+  djendjnedjnd  
+  ![Lanterns](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/lanterns.gif)
 
-## **License and right of use**
+- 📚 **New enchantments: Copper Fire Aspect & Copper Flame**  
+  Similar to Fire Aspect and Flame enchantments, but applying Copper Fire instead, causing additional damage.  
+  Both these enchantments can be highly configured individually, enabling (default) or disabling them and more.  
+  Configuration is done via datapack.
+
+## 🔗 **Dependencies**
+
+| Mod                                                   |         Loader         |   Requirement    |
+|:------------------------------------------------------|:----------------------:|:----------------:|
+| [Cobweb](https://modrinth.com/mod/cobweb)             |          All           |     Required     |
+| [Prometheus](https://modrinth.com/mod/prometheus-api) |          All           |     Required     |
+
+## 📜 **License and right of use**
 
 Feel free to use this mod for any modpack or video, just be sure to give credit and possibly link [here](https://github.com/crystal-nest/copper-fire#readme).  
 This project is published under the [Crystal Nest Community License v1](https://github.com/crystal-nest/copper-fire/blob/master/LICENSE).
 
-## **Support us**
+## ❤️ **Support us**
 
 <a href="https://crystalnest.it"><img alt="Crystal Nest Website" src="https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/crystal-nest/pic512.png" width="14.286%"></a><a href="https://discord.gg/BP6EdBfAmt"><img alt="Discord" src="https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/discord/discord512.png" width="14.286%"></a><a href="https://www.patreon.com/crystalspider"><img alt="Patreon" src="https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/patreon/patreon512.png" width="14.286%"></a><a href="https://ko-fi.com/crystalspider"><img alt="Ko-fi" src="https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/kofi/kofi512.png" width="14.286%"></a><a href="https://github.com/Crystal-Nest"><img alt="Our other projects" src="https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/github/github512.png" width="14.286%"><a href="https://modrinth.com/organization/crystal-nest"><img alt="Modrinth" src="https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/modrinth/modrinth512.png" width="14.286%"></a><a href="https://www.curseforge.com/members/crystalspider/projects"><img alt="CurseForge" src="https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/curseforge/curseforge512.png" width="14.286%"></a>
 

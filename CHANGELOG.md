@@ -9,7 +9,7 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 - Nothing new.
 
-## [v1.0.0] - 2025/12/dd
+## [v1.0.0] - 2025/12/19
 
 - Added Copper Fire using Prometheus v1.2.0.
 - Added Copper Campfire.
