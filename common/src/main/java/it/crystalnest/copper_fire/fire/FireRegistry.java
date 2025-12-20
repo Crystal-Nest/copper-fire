@@ -6,7 +6,7 @@ import it.crystalnest.prometheus.api.FireRegistrar;
 import it.crystalnest.prometheus.api.block.CustomFireBlock;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.MapColor;
@@ -20,7 +20,7 @@ public final class FireRegistry {
    * Fire type of Copper Fire (from {@link FireManager#COPPER_FIRE_TYPE}).
    */
   @ApiStatus.Internal
-  public static final ResourceLocation COPPER_FIRE_TYPE = FireManager.COPPER_FIRE_TYPE;
+  public static final Identifier COPPER_FIRE_TYPE = FireManager.COPPER_FIRE_TYPE;
 
   static {
     // noinspection DataFlowIssue: key of COPPER_FIRE_FLAME is sure to be defined.
@@ -28,7 +28,7 @@ public final class FireRegistry {
       .setDefaultComponents()
       .removeComponents(Fire.Component.LANTERN_ITEM)
       .setComponent(Fire.Component.FLAME_PARTICLE, BuiltInRegistries.PARTICLE_TYPE.getKey(ParticleTypes.COPPER_FIRE_FLAME))
-      .setComponent(Fire.Component.LANTERN_BLOCK, Blocks.COPPER_LANTERN.asList().stream().map(BuiltInRegistries.BLOCK::getKey).toArray(ResourceLocation[]::new))
+      .setComponent(Fire.Component.LANTERN_BLOCK, Blocks.COPPER_LANTERN.asList().stream().map(BuiltInRegistries.BLOCK::getKey).toArray(Identifier[]::new))
       .setLight(14)
       .setDamage(1.5F)
       .setCanRainDouse(true);

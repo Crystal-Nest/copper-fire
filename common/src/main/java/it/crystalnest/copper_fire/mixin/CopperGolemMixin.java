@@ -2,8 +2,8 @@ package it.crystalnest.copper_fire.mixin;
 
 import it.crystalnest.copper_fire.fire.FireRegistry;
 import it.crystalnest.prometheus.api.type.FireTyped;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.coppergolem.CopperGolem;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.animal.golem.CopperGolem;
 import org.spongepowered.asm.mixin.Mixin;
 
 /**
@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.Mixin;
 @Mixin(CopperGolem.class)
 public abstract class CopperGolemMixin implements FireTyped {
   @Override
-  public ResourceLocation getFireType() {
+  public Identifier getFireType() {
     return FireRegistry.COPPER_FIRE_TYPE;
   }
 }
