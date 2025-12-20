@@ -23,7 +23,9 @@ public final class CreativeModeTabEventsHandler {
   public static void handle(CreativeModeTab tab, FabricItemGroupEntries entries) {
     BuiltInRegistries.CREATIVE_MODE_TAB.getResourceKey(tab).ifPresent(key -> {
       if (key == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-        entries.addAfter(Items.CAMPFIRE, FireManager.getComponent(FireManager.COPPER_FIRE_TYPE, Fire.Component.CAMPFIRE_ITEM));
+        entries.addAfter(Items.CAMPFIRE, FireManager.getRequiredComponent(FireManager.COPPER_FIRE_TYPE, Fire.Component.CAMPFIRE_ITEM));
+      } else if (key == CreativeModeTabs.INGREDIENTS || key == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+        entries.addAfter(Items.FIRE_CHARGE, FireManager.getRequiredComponent(FireManager.COPPER_FIRE_TYPE, Fire.Component.FIRE_CHARGE_ITEM));
       }
     });
   }

@@ -60,8 +60,7 @@ repositories {
 if (name != "fabric") {
   dependencies {
     implementation "it.crystalnest:cobweb-$name:$minecraft_version-$cobweb_version"
-//    implementation "it.crystalnest:prometheus-$name:$minecraft_version-$prometheus_version"
-    implementation files("libs/prometheus-$name-$minecraft_version-${prometheus_version}.jar")
+    implementation "it.crystalnest:prometheus-$name:$minecraft_version-$prometheus_version"
   }
 }
 

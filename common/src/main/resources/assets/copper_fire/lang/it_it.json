@@ -5,5 +5,6 @@
   "enchantment.minecraft.copper_flame.desc": "Le frecce scagliate dall'arco provocano un danno da fuoco cuprico aggiuntivo.",
   "datapack.copper_fire.enchantments": "Incantesimi di Copper Fire",
   "datapack.copper_fire.enchantments.description": "Ardi i tuoi nemici con Aspetto di fuoco cuprico e Fiamma cuprica!",
-  "block.minecraft.copper_campfire": "Fuoco da campo in rame"
+  "block.minecraft.copper_campfire": "Fuoco da campo in rame",
+  "item.minecraft.copper_fire_charge": "Carica di fuoco di rame"
 }

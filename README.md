@@ -14,7 +14,7 @@
 
 ## 📝 **Description**
 
-Mojang added in copper torches and lanterns `1.21.10`... but where is **Copper Fire**? Well, here it is!
+Mojang added copper torches and lanterns in `1.21.10`... but where is **Copper Fire**? Well, here it is!
 
 This mod ensures that Copper Fire exists and has distinct behaviors, including special damage effects, custom enchantments, and more.
 
@@ -30,16 +30,15 @@ This mod ensures that Copper Fire exists and has distinct behaviors, including s
   Entities catching Copper Fire green visibly blue and take 1.5 damage per second.  
   ![Sheep](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/sheep.gif)
 
-- 🏕️ **Copper Campfire**  
-  wejfdnwekjdw  
+- 🏕️ **Copper Campfire**   
   ![Campfire](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/campfire.gif)
 
 - 🧱 **Copper Golems burn with Copper Fire**  
-  jnfdjenkdfjn  
+  They are made of copper, so they only burn with Copper Fire!    
   ![Golems](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/golems.gif)
 
 - 🏮 **Lanterns light changes with oxidation**  
-  djendjnedjnd  
+  As copper lanterns age and oxidize, their light level decreases.    
   ![Lanterns](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/lanterns.gif)
 
 - 📚 **New enchantments: Copper Fire Aspect & Copper Flame**  
