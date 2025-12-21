@@ -27,7 +27,7 @@ This mod ensures that Copper Fire exists and has distinct behaviors, including s
   *Prefer a slimmer version? Check out [Slim Fire](https://modrinth.com/resourcepack/slim-fire)!*
 
 - 🔥 **Custom Copper Fire damage**  
-  Entities catching Copper Fire green visibly blue and take 1.5 damage per second.  
+  Entities catching Copper Fire burn visibly green and take 1.5 damage per second.  
   ![Sheep](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/sheep.gif)
 
 - 🏕️ **Copper Campfire**   
