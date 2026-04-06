@@ -43,7 +43,7 @@ public final class FireRegistry {
   /**
    * {@link CobwebEntry} for Soul Fire Charge.
    */
-  public static CobwebEntry<FireChargeItem> COPPER_FIRE_CHARGE = FireRegistrar.registerFireCharge(COPPER_FIRE_TYPE);
+  public static final CobwebEntry<FireChargeItem> COPPER_FIRE_CHARGE = FireRegistrar.registerFireCharge(COPPER_FIRE_TYPE);
 
   private FireRegistry() {}
 
