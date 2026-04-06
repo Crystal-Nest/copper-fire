@@ -9,6 +9,14 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 - Nothing new.
 
+## [v1.1.0] - 2026/04/06
+
+- Implemented rebalances from [#2](https://github.com/Crystal-Nest/copper-fire/issues/2) and [#90](https://github.com/Crystal-Nest/soul-fire-d/issues/90).
+
+## [v1.0.1] - 2026/01/27
+
+- Corrected spelling of 'Cupric' to 'Copper' in lang file.
+
 ## [v1.0.0] - 2025/12/21
 
 - Added Copper Fire using Prometheus v1.2.0.
@@ -24,4 +32,6 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 [Unreleased]: https://github.com/crystal-nest/copper-fire
 [README]: https://github.com/crystal-nest/copper-fire#readme
 
+[v1.1.0]: https://github.com/crystal-nest/copper-fire/releases?q=1.1.0
+[v1.0.1]: https://github.com/crystal-nest/copper-fire/releases?q=1.0.1
 [v1.0.0]: https://github.com/crystal-nest/copper-fire/releases?q=1.0.0
