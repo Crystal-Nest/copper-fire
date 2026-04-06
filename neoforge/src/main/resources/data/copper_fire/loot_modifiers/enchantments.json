@@ -1,0 +1,27 @@
+{
+  "type": "copper_fire:loot_modifier",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/trial_chambers/reward_ominous_rare"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/trial_chambers/reward_rare"
+        }
+      ]
+    }
+  ],
+  "replacement_chance": 0.06,
+  "enchantments": [
+    {
+      "enchantment": "minecraft:copper_fire_aspect"
+    },
+    {
+      "enchantment": "minecraft:copper_flame"
+    }
+  ]
+}

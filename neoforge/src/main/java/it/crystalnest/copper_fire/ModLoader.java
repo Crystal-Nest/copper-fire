@@ -1,5 +1,6 @@
 package it.crystalnest.copper_fire;
 
+import it.crystalnest.copper_fire.loot.LootRegistry;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import org.jetbrains.annotations.ApiStatus;
@@ -17,5 +18,6 @@ public final class ModLoader {
    */
   public ModLoader(IEventBus bus) {
     CommonModLoader.init();
+    LootRegistry.register(bus);
   }
 }

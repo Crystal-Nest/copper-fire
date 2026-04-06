@@ -1,0 +1,18 @@
+{
+  "type": "copper_fire:loot_modifier",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:dispensers/trial_chambers/chamber"
+    }
+  ],
+  "replacement_chance": 0.1,
+  "items": [
+    {
+      "item": "minecraft:soul_fire_charge",
+      "weight": 3,
+      "min_count": 4,
+      "max_count": 8
+    }
+  ]
+}
