@@ -9,7 +9,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -142,15 +142,15 @@ public final class LootModifier extends net.neoforged.neoforge.common.loot.LootM
   /**
    * An enchanted book entry in the weighted pool.
    *
-   * @param enchantment {@link ResourceLocation} of the enchantment.
+   * @param enchantment {@link Identifier} of the enchantment.
    * @param weight weight for this entry.
    */
-  private record EnchantmentEntry(ResourceLocation enchantment, int weight) {
+  private record EnchantmentEntry(Identifier enchantment, int weight) {
     /**
      * {@link Codec}.
      */
     public static final Codec<EnchantmentEntry> CODEC = RecordCodecBuilder.create(instance -> instance.group(
-      ResourceLocation.CODEC.fieldOf("enchantment").forGetter(EnchantmentEntry::enchantment),
+      Identifier.CODEC.fieldOf("enchantment").forGetter(EnchantmentEntry::enchantment),
       Codec.INT.optionalFieldOf("weight", 1).forGetter(EnchantmentEntry::weight)
     ).apply(instance, EnchantmentEntry::new));
   }

@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.loot.v3.LootTableSource;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -24,19 +24,19 @@ import java.util.function.Supplier;
  */
 public final class LootTableEventsHandler {
   /**
-   * {@link ResourceLocation} of the loot table for the dispensers in the chambers of the trial chambers.
+   * {@link Identifier} of the loot table for the dispensers in the chambers of the trial chambers.
    */
-  private static final ResourceLocation DISPENSERS_TRIAL_CHAMBERS_CHAMBER_IDENTIFIER = ResourceLocation.withDefaultNamespace("dispensers/trial_chambers/chamber");
+  private static final Identifier DISPENSERS_TRIAL_CHAMBERS_CHAMBER_IDENTIFIER = Identifier.withDefaultNamespace("dispensers/trial_chambers/chamber");
 
   /**
-   * {@link ResourceLocation} of the loot table for the ominous-rare rewards in the trial chambers.
+   * {@link Identifier} of the loot table for the ominous-rare rewards in the trial chambers.
    */
-  private static final ResourceLocation CHESTS_TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_IDENTIFIER = ResourceLocation.withDefaultNamespace("chests/trial_chambers/reward_ominous_rare");
+  private static final Identifier CHESTS_TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_IDENTIFIER = Identifier.withDefaultNamespace("chests/trial_chambers/reward_ominous_rare");
 
   /**
-   * {@link ResourceLocation} of the loot table for the rare rewards in the trial chambers.
+   * {@link Identifier} of the loot table for the rare rewards in the trial chambers.
    */
-  private static final ResourceLocation CHESTS_TRIAL_CHAMBERS_REWARD_RARE_IDENTIFIER = ResourceLocation.withDefaultNamespace("chests/trial_chambers/reward_rare");
+  private static final Identifier CHESTS_TRIAL_CHAMBERS_REWARD_RARE_IDENTIFIER = Identifier.withDefaultNamespace("chests/trial_chambers/reward_rare");
 
   private LootTableEventsHandler() {}
 
@@ -49,9 +49,9 @@ public final class LootTableEventsHandler {
    * @param provider holder reference provider.
    */
   public static void handle(ResourceKey<LootTable> key, LootTable.Builder builder, LootTableSource source, HolderLookup.Provider provider) {
-    if (key.location().equals(DISPENSERS_TRIAL_CHAMBERS_CHAMBER_IDENTIFIER)) {
+    if (key.identifier().equals(DISPENSERS_TRIAL_CHAMBERS_CHAMBER_IDENTIFIER)) {
       builder.modifyPools(pool -> addItem(pool, FireRegistry.COPPER_FIRE_CHARGE, 3, UniformGenerator.between(4, 8)));
-    } else if (key.location().equals(CHESTS_TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_IDENTIFIER) || key.location().equals(CHESTS_TRIAL_CHAMBERS_REWARD_RARE_IDENTIFIER)) {
+    } else if (key.identifier().equals(CHESTS_TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_IDENTIFIER) || key.identifier().equals(CHESTS_TRIAL_CHAMBERS_REWARD_RARE_IDENTIFIER)) {
       builder.modifyPools(pool -> addEnchantment(provider, pool, "copper_fire_aspect", 1));
       builder.modifyPools(pool -> addEnchantment(provider, pool, "copper_flame", 1));
     }
@@ -78,7 +78,7 @@ public final class LootTableEventsHandler {
    * @param weight weight for the enchanted book.
    */
   private static void addEnchantment(HolderLookup.Provider provider, LootPool.Builder pool, String name, int weight) {
-    provider.lookupOrThrow(Registries.ENCHANTMENT).get(ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.withDefaultNamespace(name))).ifPresent(enchantment -> pool.add(
+    provider.lookupOrThrow(Registries.ENCHANTMENT).get(ResourceKey.create(Registries.ENCHANTMENT, Identifier.withDefaultNamespace(name))).ifPresent(enchantment -> pool.add(
       LootItem.lootTableItem(Items.BOOK).setWeight(weight).apply(new EnchantRandomlyFunction.Builder().withEnchantment(enchantment))
     ));
   }
