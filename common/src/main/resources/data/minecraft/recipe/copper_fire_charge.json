@@ -3,14 +3,15 @@
   "category": "misc",
   "ingredients": [
     "minecraft:gunpowder",
-    "minecraft:copper_nugget",
+    "minecraft:blaze_powder",
+    "minecraft:copper_ingot",
     [
       "minecraft:coal",
       "minecraft:charcoal"
     ]
   ],
   "result": {
-    "count": 1,
+    "count": 3,
     "id": "minecraft:copper_fire_charge"
   }
 }
