@@ -9,6 +9,10 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 - Nothing new.
 
+## [v1.1.0] - 2026/04/29
+
+- Ported to 26.1.x.
+
 ## [v1.1.0] - 2026/04/06
 
 - Implemented rebalances from [#2](https://github.com/Crystal-Nest/copper-fire/issues/2) and [#90](https://github.com/Crystal-Nest/soul-fire-d/issues/90).

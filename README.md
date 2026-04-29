@@ -2,7 +2,7 @@
 
 ---
 
-![Minecraft](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/minecraft/minecraft.svg "Minecraft")[![26.1.x](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/minecraft/26-1-x.svg "26.1.x")](https://modrinth.com/mod/copper-fire/versions?g=26.1)![Separator](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/separator.svg)[![1.21.11](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/minecraft/1-21-11.svg "1.21.11")](https://modrinth.com/mod/copper-fire/versions?g=1.21.11)![Separator](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/separator.svg)[![1.21.10](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/minecraft/1-21-10.svg "1.21.10")](https://modrinth.com/mod/copper-fire/versions?g=1.21.10)
+![Minecraft](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/minecraft/minecraft.svg "Minecraft")[![26.1.x](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/minecraft/26-1-x.svg "26.1.x")](https://modrinth.com/mod/copper-fire/versions?g=26.1&q=26.1.2)![Separator](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/separator.svg)[![1.21.11](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/minecraft/1-21-11.svg "1.21.11")](https://modrinth.com/mod/copper-fire/versions?g=1.21.11)![Separator](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/separator.svg)[![1.21.10](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/minecraft/1-21-10.svg "1.21.10")](https://modrinth.com/mod/copper-fire/versions?g=1.21.10)
 
 ![Loader](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/loader/loader.svg "Loader")[![NeoForge](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/loader/neoforge.svg "NeoForge")](https://modrinth.com/mod/copper-fire/versions?l=neoforge)![Separator](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/separator.svg)[![Fabric](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/loader/fabric.svg "Fabric")](https://modrinth.com/mod/copper-fire/versions?l=fabric)
 
@@ -19,6 +19,8 @@ Mojang added copper torches and lanterns in `1.21.10`... but where is **Copper F
 This mod ensures that Copper Fire exists and has distinct behaviors, including special damage effects, custom enchantments, and more.
 
 > ⚠️ **Important**: Copper Fire must be installed on **both client and server**, as it introduces substantial gameplay changes, not just visuals.
+
+[![Minecraft Storage](https://raw.githubusercontent.com/crystal-nest/mod-fancy-assets/main/copper-fire/minecraft-storage-banner.png "Minecraft Storage")](https://minecraftstorage.com/mods/copper-fire?ref=crystal-nest)
 
 ## ✨ **Features**
 
