@@ -9,6 +9,12 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 - Nothing new.
 
+## [v1.1.0] - 2026/10/22
+
+- Ported to Minecraft 1.21.1 for Fabric and NeoForge, requiring Vanilla Backport 1.2 or newer.
+- The Minecraft 1.21.1 port requires the Minecraft 1.21.1 build of Prometheus 1.2.5, which fixes copper campfire block entity validation.
+- Fixed NeoForge trial chamber dispenser loot referring to soul fire charges instead of copper fire charges on all supported Minecraft versions.
+
 ## [v1.1.0] - 2026/04/29
 
 - Ported to 26.1.x.
