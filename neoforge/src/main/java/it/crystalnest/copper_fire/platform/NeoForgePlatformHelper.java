@@ -21,6 +21,6 @@ public final class NeoForgePlatformHelper implements PlatformHelper {
 
   @Override
   public boolean isDevEnv() {
-    return !FMLLoader.getCurrent().isProduction();
+    return !FMLLoader.isProduction();
   }
 }

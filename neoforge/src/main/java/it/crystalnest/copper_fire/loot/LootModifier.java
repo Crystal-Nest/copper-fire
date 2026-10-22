@@ -10,10 +10,10 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
@@ -106,7 +106,7 @@ public final class LootModifier extends net.neoforged.neoforge.common.loot.LootM
       cumulative += enchantment.weight();
       if (roll < cumulative) {
         int maxLevel = enchantment.holder().value().getMaxLevel();
-        generatedLoot.add(EnchantmentHelper.createBook(new EnchantmentInstance(enchantment.holder(), maxLevel > 1 ? 1 + context.getRandom().nextInt(maxLevel) : 1)));
+        generatedLoot.add(EnchantedBookItem.createForEnchantment(new EnchantmentInstance(enchantment.holder(), maxLevel > 1 ? 1 + context.getRandom().nextInt(maxLevel) : 1)));
         return generatedLoot;
       }
     }

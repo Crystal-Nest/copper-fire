@@ -1,6 +1,7 @@
 package it.crystalnest.copper_fire.handler;
 
 import it.crystalnest.copper_fire.Constants;
+import it.crystalnest.copper_fire.fire.FireRegistry;
 import it.crystalnest.prometheus.api.Fire;
 import it.crystalnest.prometheus.api.FireManager;
 import net.minecraft.resources.ResourceKey;
@@ -14,7 +15,7 @@ import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 /**
  * Handler for creative mode tabs related events.
  */
-@EventBusSubscriber(modid = Constants.MOD_ID)
+@EventBusSubscriber(modid = Constants.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public final class CreativeModeTabEventsHandler {
   /**
    * Handles the {@link BuildCreativeModeTabContentsEvent} event.<br>
@@ -28,13 +29,13 @@ public final class CreativeModeTabEventsHandler {
     if (key == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
       event.insertAfter(
         Items.CAMPFIRE.getDefaultInstance(),
-        FireManager.getRequiredComponent(FireManager.COPPER_FIRE_TYPE, Fire.Component.CAMPFIRE_ITEM).getDefaultInstance(),
+        FireManager.getRequiredComponent(FireRegistry.COPPER_FIRE_TYPE, Fire.Component.CAMPFIRE_ITEM).getDefaultInstance(),
         CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
       );
     } else if (key == CreativeModeTabs.INGREDIENTS || key == CreativeModeTabs.TOOLS_AND_UTILITIES) {
       event.insertAfter(
         Items.FIRE_CHARGE.getDefaultInstance(),
-        FireManager.getRequiredComponent(FireManager.COPPER_FIRE_TYPE, Fire.Component.FIRE_CHARGE_ITEM).getDefaultInstance(),
+        FireManager.getRequiredComponent(FireRegistry.COPPER_FIRE_TYPE, Fire.Component.FIRE_CHARGE_ITEM).getDefaultInstance(),
         CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS
       );
     }

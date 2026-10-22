@@ -1,5 +1,6 @@
 package it.crystalnest.copper_fire.handler;
 
+import it.crystalnest.copper_fire.fire.FireRegistry;
 import it.crystalnest.prometheus.api.Fire;
 import it.crystalnest.prometheus.api.FireManager;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
@@ -23,9 +24,9 @@ public final class CreativeModeTabEventsHandler {
   public static void handle(CreativeModeTab tab, FabricItemGroupEntries entries) {
     BuiltInRegistries.CREATIVE_MODE_TAB.getResourceKey(tab).ifPresent(key -> {
       if (key == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-        entries.addAfter(Items.CAMPFIRE, FireManager.getRequiredComponent(FireManager.COPPER_FIRE_TYPE, Fire.Component.CAMPFIRE_ITEM));
+        entries.addAfter(Items.CAMPFIRE, FireManager.getRequiredComponent(FireRegistry.COPPER_FIRE_TYPE, Fire.Component.CAMPFIRE_ITEM));
       } else if (key == CreativeModeTabs.INGREDIENTS || key == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-        entries.addAfter(Items.FIRE_CHARGE, FireManager.getRequiredComponent(FireManager.COPPER_FIRE_TYPE, Fire.Component.FIRE_CHARGE_ITEM));
+        entries.addAfter(Items.FIRE_CHARGE, FireManager.getRequiredComponent(FireRegistry.COPPER_FIRE_TYPE, Fire.Component.FIRE_CHARGE_ITEM));
       }
     });
   }

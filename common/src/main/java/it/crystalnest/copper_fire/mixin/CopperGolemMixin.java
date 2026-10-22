@@ -1,15 +1,15 @@
 package it.crystalnest.copper_fire.mixin;
 
+import com.blackgear.vanillabackport.common.level.entities.mob.animal.golem.copper_golem.CopperGolem;
 import it.crystalnest.copper_fire.fire.FireRegistry;
 import it.crystalnest.prometheus.api.type.FireTyped;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.animal.coppergolem.CopperGolem;
 import org.spongepowered.asm.mixin.Mixin;
 
 /**
- * Injects into {@link CopperGolem} to alter fire behavior for consistency.
+ * Makes Vanilla Backport's copper golems burn with copper fire.
  */
-@Mixin(CopperGolem.class)
+@Mixin(value = CopperGolem.class, remap = false)
 public abstract class CopperGolemMixin implements FireTyped {
   @Override
   public ResourceLocation getFireType() {

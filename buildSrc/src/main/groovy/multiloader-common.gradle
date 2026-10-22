@@ -30,6 +30,10 @@ tasks.withType(JavaCompile).configureEach {
 repositories {
   mavenCentral()
   exclusiveContent {
+    forRepository { maven { url = "https://api.modrinth.com/maven" } }
+    filter { includeGroup "maven.modrinth" }
+  }
+  exclusiveContent {
     forRepository {
       maven {
         name = "Sponge"
@@ -66,7 +70,7 @@ repositories {
 
 if (name != "fabric") {
   dependencies {
-    implementation "it.crystalnest:cobweb-$name:$minecraft_version-$cobweb_version"
+    implementation "it.crystalnest:cobweb-$name:$cobweb_minecraft_version-$cobweb_version"
     implementation "it.crystalnest:prometheus-$name:$minecraft_version-$prometheus_version"
   }
 }
@@ -111,26 +115,33 @@ jar {
 
 processResources {
   def expandProps = [
-    "java_version"                 : java_version,
-    "mod_version"                  : mod_version,
-    "group"                        : project.group,
-    "mod_authors"                  : mod_authors,
-    "mod_title"                    : mod_title,
-    "mod_id"                       : mod_id,
-    "mod_id_kebab"                 : mod_id_kebab,
-    "license"                      : license,
-    "description"                  : project.description,
-    "credits"                      : credits,
-    "github_user"                  : github_user,
-    "curseforge_id"                : curseforge_id,
-    "minecraft_version"            : minecraft_version,
-    "pack_format"                  : pack_format,
-    "fabric_version"               : fabric_version,
-    "fabric_loader_version"        : fabric_loader_version,
-    "neoforge_version"             : neoforge_version,
-    "neoforge_loader_version_range": neoforge_loader_version_range,
-    "cobweb_version"               : cobweb_version,
-    "prometheus_version"           : prometheus_version,
+    "java_version"                     : java_version,
+    "mod_version"                      : mod_version,
+    "group"                            : project.group,
+    "mod_authors"                      : mod_authors,
+    "mod_title"                        : mod_title,
+    "mod_id"                           : mod_id,
+    "mod_id_kebab"                     : mod_id_kebab,
+    "license"                          : license,
+    "description"                      : project.description,
+    "credits"                          : credits,
+    "github_user"                      : github_user,
+    "curseforge_id"                    : curseforge_id,
+    "minecraft_version"                : minecraft_version,
+    "pack_format"                      : pack_format,
+    "resource_pack_format"             : resource_pack_format,
+    "fabric_version"                   : fabric_version,
+    "fabric_loader_version"            : fabric_loader_version,
+    "neoforge_version"                 : neoforge_version,
+    "neoforge_loader_version_range"    : neoforge_loader_version_range,
+    "cobweb_version"                   : cobweb_version,
+    "cobweb_minecraft_version"         : cobweb_minecraft_version,
+    "prometheus_version"               : prometheus_version,
+    "vanillabackport_version"          : vanillabackport_version,
+    "vanillabackport_fabric_version"   : vanillabackport_fabric_version,
+    "vanillabackport_neoforge_version" : vanillabackport_neoforge_version,
+    "platform_fabric_version"          : platform_fabric_version,
+    "platform_neoforge_version"        : platform_neoforge_version,
   ]
   filesMatching(["**/pack.mcmeta", "fabric.mod.json", "META-INF/neoforge.mods.toml", "*.mixins.json"]) {
     expand expandProps
@@ -230,6 +241,7 @@ publisher {
   modrinthDepends {
     required "cobweb"
     required "prometheus-api"
+    required "vanillabackport"
     switch (loader) {
       case "Fabric":
         required "fabric-api"
@@ -241,6 +253,7 @@ publisher {
   curseDepends {
     required "cobweb"
     required "prometheus"
+    required "vanillabackport"
     switch (loader) {
       case "Fabric":
         required "fabric-api"

@@ -27,10 +27,11 @@
   "depends": {
     "fabricloader": ">=${fabric_loader_version}",
     "fabric-api": "*",
-    "minecraft": "~${minecraft_version}",
+    "minecraft": "${minecraft_version}",
     "java": ">=${java_version}",
     "cobweb": "^${cobweb_version}",
-    "prometheus": "^${prometheus_version}"
+    "prometheus": "^${prometheus_version}",
+    "vanillabackport": ">=${vanillabackport_version}"
   },
   "suggests": {
     "soul_fire_d": "^6.0.3"

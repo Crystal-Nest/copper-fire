@@ -6,7 +6,7 @@ issueTrackerURL="https://github.com/${github_user}/${mod_id_kebab}/issues" #opti
   modId = "${mod_id}" #mandatory
   version = "${mod_version}" #mandatory
   displayName = "${mod_title}" #mandatory
-  updateJSONURL = "https://api.modrinth.com/updates/${mod_id_kebab}/forge_updates.json" #optional (see https://docs.neoforged.net/docs/misc/updatechecker/)
+  updateJSONURL = "https://api.modrinth.com/updates/${mod_id_kebab}/forge_updates.json?neoforge=only" #optional (see https://docs.neoforged.net/docs/misc/updatechecker/)
   displayURL = "https://github.com/${github_user}/${mod_id_kebab}/tree/${minecraft_version}" #optional (displayed in the mod UI)
   logoFile = "banner.png" #optional
   credits = "${credits}" #optional
@@ -25,7 +25,7 @@ issueTrackerURL="https://github.com/${github_user}/${mod_id_kebab}/issues" #opti
 [[dependencies.${mod_id}]]
   modId = "minecraft"
   type = "required"
-  versionRange = "[${minecraft_version},)"
+  versionRange = "[${minecraft_version}]"
   ordering = "NONE"
   side = "BOTH"
 [[dependencies.${mod_id}]]
@@ -38,6 +38,13 @@ issueTrackerURL="https://github.com/${github_user}/${mod_id_kebab}/issues" #opti
   modId = "prometheus"
   type = "required"
   versionRange = "[${prometheus_version},)"
+  ordering = "AFTER"
+  side = "BOTH"
+
+[[dependencies.${mod_id}]]
+  modId = "vanillabackport"
+  type = "required"
+  versionRange = "[${vanillabackport_version},)"
   ordering = "AFTER"
   side = "BOTH"
 
