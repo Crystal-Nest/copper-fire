@@ -9,7 +9,7 @@
   "replacement_chance": 0.1,
   "items": [
     {
-      "item": "minecraft:soul_fire_charge",
+      "item": "minecraft:copper_fire_charge",
       "weight": 3,
       "min_count": 4,
       "max_count": 8
