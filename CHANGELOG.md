@@ -9,6 +9,12 @@ and this project adheres to [Crystal Nest Semantic Versioning](https://crystalne
 
 - Nothing new.
 
+## [v1.1.1] - 2026/11/dd
+
+- Ported to 26.3.
+- Updated to Cobweb 2.0.0.
+- Fixed loot errors on NeoForge when the enchantments data pack is disabled.
+
 ## [v1.1.1] - 2026/10/22
 
 - Fixed NeoForge trial chamber dispenser loot referring to soul fire charges instead of copper fire charges.

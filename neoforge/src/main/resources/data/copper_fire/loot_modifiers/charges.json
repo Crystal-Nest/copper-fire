@@ -1,11 +1,9 @@
 {
   "type": "copper_fire:loot_modifier",
-  "conditions": [
-    {
-      "condition": "neoforge:loot_table_id",
-      "loot_table_id": "minecraft:dispensers/trial_chambers/chamber"
-    }
-  ],
+  "condition": {
+    "type": "neoforge:loot_table_id",
+    "loot_table_id": "minecraft:dispensers/trial_chambers/chamber"
+  },
   "replacement_chance": 0.1,
   "items": [
     {

@@ -3,10 +3,11 @@ package it.crystalnest.copper_fire.handler;
 import it.crystalnest.copper_fire.fire.FireRegistry;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableSource;
+import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -14,8 +15,8 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
-import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.function.Supplier;
 
@@ -50,7 +51,7 @@ public final class LootTableEventsHandler {
    */
   public static void handle(ResourceKey<LootTable> key, LootTable.Builder builder, LootTableSource source, HolderLookup.Provider provider) {
     if (key.identifier().equals(DISPENSERS_TRIAL_CHAMBERS_CHAMBER_IDENTIFIER)) {
-      builder.modifyPools(pool -> addItem(pool, FireRegistry.COPPER_FIRE_CHARGE, 3, UniformGenerator.between(4, 8)));
+      builder.modifyPools(pool -> addItem(pool, FireRegistry.COPPER_FIRE_CHARGE, 3, ContextIntProviders.between(4, 8)));
     } else if (key.identifier().equals(CHESTS_TRIAL_CHAMBERS_REWARD_OMINOUS_RARE_IDENTIFIER) || key.identifier().equals(CHESTS_TRIAL_CHAMBERS_REWARD_RARE_IDENTIFIER)) {
       builder.modifyPools(pool -> addEnchantment(provider, pool, "copper_fire_aspect", 1));
       builder.modifyPools(pool -> addEnchantment(provider, pool, "copper_flame", 1));
@@ -65,7 +66,7 @@ public final class LootTableEventsHandler {
    * @param weight weight for the item.
    * @param count item count.
    */
-  private static void addItem(LootPool.Builder pool, Supplier<? extends Item> item, int weight, NumberProvider count) {
+  private static void addItem(LootPool.Builder pool, Supplier<? extends Item> item, int weight, Holder<ContextIntProvider> count) {
     pool.add(LootItem.lootTableItem(item.get()).setWeight(weight).apply(SetItemCountFunction.setCount(count)));
   }
 

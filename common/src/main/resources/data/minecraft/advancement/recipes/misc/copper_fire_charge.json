@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:copper_fire_charge"
+        "recipes": "minecraft:copper_fire_charge"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

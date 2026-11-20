@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 /**
@@ -60,13 +61,15 @@ public final class LootModifier extends net.neoforged.neoforge.common.loot.LootM
   private final List<EnchantmentEntry> enchantments;
 
   /**
-   * @param conditionsIn loot item conditions.
+   * @param condition optional loot item condition.
+   * @param priority native loot modifier priority.
+   * @param replacementChance probability of replacing the original loot.
    * @param emptyWeight weight for the empty entry.
    * @param items item entries.
    * @param enchantments enchanted book entries.
    */
-  private LootModifier(LootItemCondition[] conditionsIn, int priority, float replacementChance, int emptyWeight, List<ItemEntry> items, List<EnchantmentEntry> enchantments) {
-    super(conditionsIn, priority);
+  private LootModifier(Optional<Holder<LootItemCondition>> condition, int priority, float replacementChance, int emptyWeight, List<ItemEntry> items, List<EnchantmentEntry> enchantments) {
+    super(condition, priority);
     this.replacementChance = replacementChance;
     this.emptyWeight = emptyWeight;
     this.items = items;
@@ -81,36 +84,48 @@ public final class LootModifier extends net.neoforged.neoforge.common.loot.LootM
     for (EnchantmentEntry entry : enchantments) {
       lookup.get(ResourceKey.create(Registries.ENCHANTMENT, entry.enchantment())).ifPresent(holder -> resolved.add(new ResolvedEnchantment(holder, entry.weight())));
     }
-    if (replacementChance > 0) {
-      if (context.getRandom().nextFloat() < replacementChance) {
-        generatedLoot.clear();
-      } else {
-        return generatedLoot;
-      }
-    }
     int totalWeight = emptyWeight + items.stream().mapToInt(ItemEntry::weight).sum() + resolved.stream().mapToInt(ResolvedEnchantment::weight).sum();
-    int roll = context.getRandom().nextInt(totalWeight);
-    int cumulative = emptyWeight;
-    if (roll < cumulative) {
-      return generatedLoot;
-    }
-    for (ItemEntry item : items) {
-      cumulative += item.weight();
-      if (roll < cumulative) {
-        int count = item.minCount() + (item.maxCount() > item.minCount() ? context.getRandom().nextInt(item.maxCount() - item.minCount() + 1) : 0);
-        generatedLoot.add(new ItemStack(item.item(), count));
-        return generatedLoot;
+    if (totalWeight > 0 && (replacementChance <= 0 || context.getRandom().nextFloat() < replacementChance)) {
+      if (replacementChance > 0) {
+        generatedLoot.clear();
       }
-    }
-    for (ResolvedEnchantment enchantment : resolved) {
-      cumulative += enchantment.weight();
-      if (roll < cumulative) {
-        int maxLevel = enchantment.holder().value().getMaxLevel();
-        generatedLoot.add(EnchantmentHelper.createBook(new EnchantmentInstance(enchantment.holder(), maxLevel > 1 ? 1 + context.getRandom().nextInt(maxLevel) : 1)));
-        return generatedLoot;
+      ItemStack item = selectItem(context, resolved, totalWeight);
+      if (!item.isEmpty()) {
+        generatedLoot.add(item);
       }
     }
     return generatedLoot;
+  }
+
+  /**
+   * Selects an item from the nonempty weighted pool.
+   * Returns an empty stack when the roll selects the empty entry.
+   *
+   * @param context loot context supplying randomness.
+   * @param resolved enchantments available in the current world.
+   * @param totalWeight positive total weight of the pool.
+   * @return selected item or an empty stack.
+   */
+  private ItemStack selectItem(LootContext context, List<ResolvedEnchantment> resolved, int totalWeight) {
+    int roll = context.getRandom().nextInt(totalWeight);
+    int cumulative = emptyWeight;
+    if (roll >= cumulative) {
+      for (ItemEntry item : items) {
+        cumulative += item.weight();
+        if (roll < cumulative) {
+          int count = item.minCount() + (item.maxCount() > item.minCount() ? context.getRandom().nextInt(item.maxCount() - item.minCount() + 1) : 0);
+          return new ItemStack(item.item(), count);
+        }
+      }
+      for (ResolvedEnchantment enchantment : resolved) {
+        cumulative += enchantment.weight();
+        if (roll < cumulative) {
+          int maxLevel = enchantment.holder().value().getMaxLevel();
+          return EnchantmentHelper.createBook(new EnchantmentInstance(enchantment.holder(), maxLevel > 1 ? 1 + context.getRandom().nextInt(maxLevel) : 1));
+        }
+      }
+    }
+    return ItemStack.EMPTY;
   }
 
   @NotNull
